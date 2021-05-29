@@ -7,93 +7,126 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="./Resources/style.css">
+    <link href="http://fonts.cdnfonts.com/css/badaboom-bb" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-<header>
-    <h1>Awesomeness</h1>
-</header>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">SW-Web</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!--navigation bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-purple">
+    <a class="navbar-brand">SW-Web-Challenge</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../../../index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Latitude vs ...</a>
-                    <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./Resources/assets/html/temp.html">Temperature</a>
-                        <a class="dropdown-item" href="./Resources/assets/html/cloud.html">Cloudiness</a>
-                        <a class="dropdown-item" href="./Resources/assets/html/humidity.html">Humidity</a>
-                        <a class="dropdown-item" href="./Resources/assets/html/wind.html">Windiness</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./Resources/assets/html/weather.html">Data</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../../../index.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+                <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="./Resources/assets/html/temp.html">Temperature</a>
+                    <a class="dropdown-item" href="./Resources/assets/html/cloud.html">Cloudiness</a>
+                    <a class="dropdown-item" href="./Resources/assets/html/humidity.html">Humidity</a>
+                    <a class="dropdown-item" href="./Resources/assets/html/wind.html">Wind Speed</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./Resources/assets/html/comparison.html">Comparison</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./Resources/assets/html/weather.html">Data</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <h2 class="section-title">
-        Summary: Latitude v X
+<body>
+    <!--chart and paragraph-->
+    <h2>
+        Summary: Latitude vs X
     </h2>
+    <div class="container">
+        <div class="row">
+            <!--First Column in this Row-->
+            <div class="col-md-4">
+                <div class="box">
+                    <figure class="figure">
+                        <img src="./Resources/assets/images/figLatTemp.png" class="figure-img img-fluid rounded" href="./Resources/assets/html/temp.html" alt="Temperatures">
+                        <figcaption class="figure-caption caption-sm" style="text-align-last: center;">*City Latitude vs Temperature.</figcaption>
+                    </figure>
+                </div>
+            </div>
 
-    <p>The purpose of this project was to analyse how weather changes as you get closer to the equater. To accomplish this analysis we had to first pull data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
+            <!--Second Column in this Row-->
+            <div class="col-md-8 textbox-white">
+                <div class="box">
+                    <p>The purpose of this project was to analyse how weather changes as you get closer to the equater. To accomplish this analysis we had to first pull data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
+                </div>
+                <div class="box">
+                    <p>After assembling the dataset, we used MatPlotslib to Plots various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humditiy. This site provides the source data and visualizations
+                        created as part of the analysis, as well as explanation and descriptions of any trends and correlations witnessed.</p>
+                </div>
+            </div>
+        </div>
 
-    <table class="table-center">
-        <thead>
-            <tr style="text-align: center;">
-                <th>Temperature</th>
-                <th>Cloudiness</th>
-                <th>Humidity</th>
-                <th>Windiness</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <a target="_blank" href="./Resources/assets/html/temp.html">
-                        <img class="img-thumbnail" src="./Resources/assets/images/figNorthLatTempLine.png" alt="Cloud">
-                    </a>
-                </td>
-                <td>
-                    <a target="_blank" href="./Resources/assets/html/cloud.html">
-                        <img class="img-thumbnail" src="./Resources/assets/images/figNorthLatCloudLine.png" alt="Cloud">
-                    </a>
-                </td>
-                <td>
-                    <a target="_blank" href="./Resources/assets/html/humidity.html">
-                        <img class="img-thumbnail" src="./Resources/assets/images/figNorthLatHumLine.png" alt="Cloud">
-                    </a>
-                </td>
-                <td>
-                    <a target="_blank" href="./Resources/assets/html/Wind.html">
-                        <img class="img-thumbnail" src="./Resources/assets/images/figNorthLatWindLine.png" alt="Cloud">
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+        <div style="padding-top: 70px;">
+            <table class="table-center">
+                <thead>
+                    <tr style="text-align: center">
+                        <th>Temperature</th>
+                        <th>Cloudiness</th>
+                        <th>Humidity</th>
+                        <th>WindSpeed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="./Resources/assets/html/temp.html">
+                                <img class="img-thumbnail" src="./Resources/assets/images/figLatTemp.png" alt="Temperatures">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./Resources/assets/html/cloud.html">
+                                <img class="img-thumbnail" src="./Resources/assets/images/figLatCloud.png" alt="Cloud">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./Resources/assets/html/humidity.html">
+                                <img class="img-thumbnail" src="./Resources/assets/images/figLatHum.png" alt="Humidity">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./Resources/assets/html/Wind.html">
+                                <img class="img-thumbnail" src="./Resources/assets/images/figLatWind.png" alt="Wind Speed">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <caption class="table-center caption-sm">*click on image to navigate to page</caption>
+                </tfoot>
+            </table>
+        </div>
 </body>
 
 <footer>
-    <ul class="no-bullets">
-        <li><strong>Email:</strong> <a href="tunergt611@gmail.com">tunergt611@gmail.com</a></li>
-        <li><strong>Github:</strong> <a href="https://github.com/kidik425/">kidik425</a></li>
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="no-bullets">
+                    <li><strong>Author:</strong> <a>Steve Walker</a></li>
+                    <li><strong>Email:</strong> <a>tunergt611@gmail.com</a></li>
+                    <li><strong>Github:</strong> <a href="https://github.com/kidik425/">kidik425</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </html>
